@@ -26,7 +26,7 @@ public class MyService // : IMyService
 {
     public MyService()
     {
-        Thread.Sleep(65000);
+        Thread.Sleep(10000);
     }
 
     public async Task<string> GetStatus()
@@ -40,7 +40,7 @@ public class MyService // : IMyService
     {
         if (System.Environment.GetEnvironmentVariable("pause").ToLower() == "true")
         {
-            await Task.Delay(30000);
+            await Task.Delay(10000);
         }
     }
 }

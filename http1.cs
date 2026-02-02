@@ -9,9 +9,9 @@ namespace proj1;
 public class http1
 {
     private readonly ILogger<http1> _logger;
-    private readonly MyService _myService;
+    private readonly IMyService _myService;
 
-    public http1(ILogger<http1> logger, MyService myService)
+    public http1(ILogger<http1> logger, IMyService myService)
     {
         _logger = logger;
         _myService = myService;
