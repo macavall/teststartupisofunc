@@ -1,0 +1,6 @@
+local.settings.json
+obj/
+bin/
+Properties/
+.vs/
+.vscode/
