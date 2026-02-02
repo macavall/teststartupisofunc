@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Azure.Functions.Worker;
@@ -26,6 +27,7 @@ public class MyService // : IMyService
 {
     public MyService()
     {
+        string temp = Environment.GetEnvironmentVariable("pause");
         Thread.Sleep(30000);
     }
 
