@@ -17,7 +17,7 @@ internal class Program
         builder.Services
             .AddApplicationInsightsTelemetryWorkerService()
             .ConfigureFunctionsApplicationInsights()
-            .AddSingleton(new MyService());
+            .AddSingleton(new MyService()); // <-- NEW SERVICE WITH CONSTRUCTOR TAKING 30 SECONDS
 
         builder.Build().Run();
     }
@@ -42,7 +42,7 @@ public class MyService // : IMyService
     {
         if (System.Environment.GetEnvironmentVariable("pause").ToLower() == "true")
         {
-            await Task.Delay(30000);
+            await Task.Delay(0);
         }
     }
 }
