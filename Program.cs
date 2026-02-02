@@ -26,7 +26,7 @@ public class MyService // : IMyService
 {
     public MyService()
     {
-        Thread.Sleep(30000);
+        Thread.Sleep(65000);
     }
 
     public async Task<string> GetStatus()
