@@ -72,9 +72,3 @@ internal class Program
         host.Run();
     }
 }
-
-// ============================================================
-// Simulated slow services to demonstrate instantiation timing
-// ============================================================
-
-
