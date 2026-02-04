@@ -10,7 +10,7 @@ public class SlowService : ISlowService
     public SlowService()
     {
         Console.WriteLine($"[{Program_Timestamp()}] SlowService constructor STARTED - simulating 500ms delay...");
-        Thread.Sleep(500); // Simulate slow initialization (loading config, etc.)
+        Thread.Sleep(5000); // Simulate slow initialization (loading config, etc.)
         Name = $"SlowService-{Guid.NewGuid().ToString()[..8]}";
         Console.WriteLine($"[{Program_Timestamp()}] SlowService constructor COMPLETED: {Name}");
     }
@@ -25,7 +25,7 @@ public class AnotherSlowService : IAnotherSlowService
     public AnotherSlowService()
     {
         Console.WriteLine($"[{Program_Timestamp()}] AnotherSlowService constructor STARTED - simulating 300ms delay...");
-        Thread.Sleep(300); // Simulate slow initialization
+        Thread.Sleep(10000); // Simulate slow initialization
         Name = $"AnotherSlowService-{Guid.NewGuid().ToString()[..8]}";
         Console.WriteLine($"[{Program_Timestamp()}] AnotherSlowService constructor COMPLETED: {Name}");
     }
