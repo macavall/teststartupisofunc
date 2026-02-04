@@ -9,12 +9,12 @@ namespace proj1;
 public class http1
 {
     private readonly ILogger<http1> _logger;
-    private readonly MyService _myService;
+    //private readonly IMyService _myService;
 
-    public http1(ILogger<http1> logger, MyService myService)
+    public http1(ILogger<http1> logger) //, IMyService myService)
     {
         _logger = logger;
-        _myService = myService;
+        //_myService = myService;
     }
 
     [Function("http1")]
@@ -22,11 +22,11 @@ public class http1
     {
         _logger.LogInformation("C# HTTP trigger function processed a request.");
 
-        var temp = await _myService.GetStatus();
+        // var temp = await _myService.GetStatus();
 
-        _logger.LogInformation(temp);
+        // _logger.LogInformation(temp);
 
-        await _myService.DoWork();
+        // await _myService.DoWork();
 
         return new OkObjectResult("Welcome to Azure Functions!");
     }
