@@ -15,38 +15,8 @@ internal class Program
 
         builder.Services
             .AddApplicationInsightsTelemetryWorkerService()
-            .ConfigureFunctionsApplicationInsights()
-            .AddSingleton(new MyService());
+            .ConfigureFunctionsApplicationInsights();
 
         builder.Build().Run();
     }
-}
-
-public class MyService // : IMyService
-{
-    public MyService()
-    {
-        Thread.Sleep(10000);
-    }
-
-    public async Task<string> GetStatus()
-    {
-        await Task.Delay(0);
-
-        return "STATUS: MyService is running!";
-    }
-
-    public async Task DoWork()
-    {
-        if (System.Environment.GetEnvironmentVariable("pause").ToLower() == "true")
-        {
-            await Task.Delay(10000);
-        }
-    }
-}
-
-public interface IMyService
-{
-    public Task DoWork();
-    public Task<string> GetStatus();
 }
